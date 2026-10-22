@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valentina D'Anna — Economics</title>
+<meta name="description" content="Valentina D'Anna is a PhD Candidate in Economics at the Rome Economics Doctorate (RED), Rome.">
+<meta property="og:title" content="Valentina D'Anna">
+<meta property="og:description" content="PhD Candidate in Economics at the Rome Economics Doctorate (RED), Rome.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F7F3;
+  --ink:#1B241E;
+  --salvia:#6E8B72;
+  --salvia-deep:#3F5645;
+  --muted:#77827B;
+  --rule:#DCE1D8;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --nav-w:280px;
+  --measure:88rem;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);transition:border-color .2s,color .2s}
+a:hover{color:var(--salvia-deep);border-bottom-color:var(--salvia)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--salvia);outline-offset:3px;border-radius:2px}
+
+/* ---------- sidebar index ---------- */
+.index{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:baseline;justify-content:space-between;gap:2.5rem;
+  padding:1.15rem 4rem;border-bottom:1px solid var(--rule);
+  background:rgba(246,247,243,.93);backdrop-filter:saturate(140%) blur(10px);
+}
+.index .mark{font-family:var(--serif);font-size:1.1rem;letter-spacing:.01em;min-width:0}
+.index .mark span{display:inline;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin-left:.6rem}
+.index nav{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 2rem}
+.index nav a{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);border:0;padding:.15rem 0;position:relative;
+}
+.index nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:-3px;height:1.5px;
+  background:var(--salvia);transform:scaleX(0);transform-origin:left;transition:transform .22s;
+}
+.index nav a:hover,.index nav a.on{color:var(--ink)}
+.index nav a.on::after{transform:scaleX(1)}
+.navitem{position:relative;display:block;font-family:var(--mono);font-size:.7rem;line-height:inherit}
+.navitem > .submenu{
+  position:absolute;top:100%;left:-1rem;min-width:13rem;z-index:60;
+  padding:.9rem 0 .5rem;display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transform:translateY(-4px);
+  transition:opacity .18s,transform .18s,visibility .18s;
+}
+.navitem:hover > .submenu,.navitem:focus-within > .submenu{opacity:1;visibility:visible;transform:none}
+.submenu > a{background:var(--paper);border:1px solid var(--rule);border-bottom:0;
+  padding:.55rem 1rem;white-space:nowrap}
+.submenu > a:last-child{border-bottom:1px solid var(--rule)}
+.submenu > a::after{display:none}
+.submenu > a:hover{background:#EDF1EA;color:var(--ink)}
+
+/* ---------- layout ---------- */
+main{padding:0 4rem}
+.wrap{max-width:var(--measure);margin:0 auto}
+section{padding:7.5rem 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0;padding-top:6rem}
+
+.sec{display:block}
+.sec + .sec{margin-top:5rem}
+.divider{border-bottom:1.5px solid var(--salvia);padding-bottom:1.05rem;margin-bottom:4rem;
+  display:flex;align-items:baseline;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.divider h2{font-size:clamp(2.2rem,4.2vw,3.4rem);line-height:1;margin:0}
+.divider .count{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--salvia-deep)}
+.sec > .eyebrow{margin:0 0 1.8rem}
+.sec > .eyebrow:empty{display:none}
+.eyebrow{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--salvia-deep);margin:0 0 1.6rem;
+}
+h1,h2{font-family:var(--serif);font-weight:300;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.5rem,5vw,4.4rem);line-height:1.02}
+.hero-bio h1{margin-bottom:1.6rem}
+h1.in-salvia{color:var(--salvia-deep)}
+h1 em{font-style:italic;color:var(--salvia-deep)}
+h2{font-size:clamp(1.7rem,2.6vw,2.3rem);line-height:1.2;margin-bottom:2.8rem}
+h3{font-family:var(--serif);font-weight:400;font-size:1.22rem;line-height:1.35;margin:0 0 .5rem}
+p{margin:0 0 1.1rem;max-width:42rem}
+.lede{font-size:1.16rem;line-height:1.6}
+.hero-bio p{font-size:1.16rem;line-height:1.6}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:6rem;align-items:stretch}
+.portrait{align-self:start}
+.portrait img{width:100%;aspect-ratio:1/1;display:block;border-radius:50%;object-fit:cover;object-position:50% 42%;filter:grayscale(.12)}
+.market{border-left:2px solid var(--salvia);padding-left:1.1rem;color:var(--salvia-deep)}
+.contact-lines{font-family:var(--mono);font-size:.8rem;line-height:2;margin-top:1.8rem}
+.contact-lines span{display:inline-block;width:5.5rem;color:var(--muted);
+  font-size:.66rem;letter-spacing:.13em;text-transform:uppercase}
+
+/* ---------- paper records ---------- */
+.record{display:grid;grid-template-columns:2fr minmax(0,1fr);gap:3.5rem;padding:2.6rem 0;border-top:1px solid var(--rule)}
+.record.nofig{grid-template-columns:1fr}
+.figure{margin:0}
+.figure a{display:block;border:1px solid var(--rule);background:#fff;padding:.6rem;transition:border-color .2s}
+.figure a:hover{border-color:var(--salvia)}
+.figure img{width:100%;display:block}
+.figure .ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:#EDF1EA;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--salvia-deep)}
+details.abs{margin:.2rem 0 .9rem}
+details.abs summary{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--salvia-deep);cursor:pointer;list-style:none;display:inline-block}
+details.abs summary::-webkit-details-marker{display:none}
+details.abs summary::after{content:" +";color:var(--salvia)}
+details.abs[open] summary::after{content:" –"}
+details.abs p{margin:.8rem 0 0;font-size:.92rem;line-height:1.75;color:var(--muted);max-width:none}
+.record:first-of-type{border-top:0;padding-top:0}
+.record .gutter{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--muted);padding-top:.35rem}
+.record .summary{color:var(--muted);margin-bottom:.9rem}
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--salvia-deep);border:1px solid var(--salvia);
+  padding:.15rem .5rem;margin:0 .4rem .4rem 0;
+}
+.status{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--salvia-deep);margin:.5rem 0 0}
+.coauthors{font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.venue{font-size:.9rem;color:var(--ink);margin-bottom:.8rem}
+.venue strong{font-weight:500}
+.record p{max-width:none}
+.record h3 a{border-bottom-color:transparent}
+.record h3 a:hover{border-bottom-color:var(--salvia)}
+.links{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;display:flex;flex-wrap:wrap;gap:1.2rem}
+.links a{border-bottom:1px solid var(--salvia)}
+
+/* ---------- misc blocks ---------- */
+.stack{display:flex;flex-direction:column;gap:2rem}
+.item{display:grid;grid-template-columns:minmax(0,1fr);gap:.3rem}
+.item .gutter{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--muted);padding-top:.2rem}
+.item h3{font-size:1.05rem;margin-bottom:.2rem}
+.item p{font-size:.92rem;color:var(--muted);margin:0}
+.cv-call{margin-top:2.4rem;font-family:var(--mono);font-size:.75rem;letter-spacing:.08em}
+.refs{margin-top:3.2rem;padding-top:2.2rem;border-top:1px solid var(--rule)}
+.refs ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 3rem;max-width:52rem}
+.refs li{display:flex;flex-direction:column;gap:.15rem}
+.refs li span{font-size:.85rem;color:var(--muted)}
+.refs-note{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:1.8rem 0 0}
+.note{font-family:var(--mono);font-size:.68rem;color:var(--salvia-deep);background:#EAEFE7;
+  border-left:2px solid var(--salvia);padding:.6rem .9rem;margin:0 0 2rem;max-width:38rem;line-height:1.6}
+.emails{font-family:var(--mono);font-size:.85rem;line-height:2.1;margin:0}
+.emails .lbl{display:inline-block;width:4.4rem;color:var(--muted)}
+.address{line-height:1.95;margin:2.2rem 0 0}
+footer{padding:2.5rem 4rem 4rem;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem 2rem;
+  font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:.06em}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .index{flex-direction:column;align-items:flex-start;gap:.9rem;padding:1.2rem 1.5rem}
+  .index nav{gap:.2rem 1.4rem}
+  .submenu{display:none}
+  main,footer{padding-left:1.5rem;padding-right:1.5rem}
+  section{padding:4rem 0}
+  .hero{grid-template-columns:1fr;gap:2rem}
+  .portrait{max-width:230px;height:auto;order:-1}
+  .record,.item{grid-template-columns:1fr;gap:.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<aside class="index">
+  <div class="mark">Valentina D'Anna<span>RED · Rome Economics Doctorate</span></div>
+  <nav id="nav">
+    <a href="#home" class="on">Home</a>
+    <span class="navitem">
+      <a href="#research">Research</a>
+      <span class="submenu">
+        <a href="#job-market-paper">Job market paper</a>
+        <a href="#publications">Publications</a>
+        <a href="#working-papers">Working papers</a>
+        <a href="#work-in-progress">Work in progress</a>
+      </span>
+    </span>
+    <a href="#cv">CV</a>
+    <a href="#contacts">Contacts</a>
+  </nav>
+</aside>
+
+<main>
+<div class="wrap">
+
+  <section id="home">
+    <div class="hero">
+      <div class="hero-bio">
+        <h1 class="in-salvia">Valentina D'Anna</h1>
+          <p class="lede">I am a PhD Candidate in Economics at the <a href="https://www.redphd.it/">Rome Economics Doctorate</a> (RED) — a joint program run by <a href="https://www.eief.it/eief/">EIEF</a>, LUISS, Sapienza University of Rome, and Tor Vergata University of Rome.</p>
+          <p>I am an applied microeconomist and my research lies at the intersection of labor economics, economics of education and gender.</p>
+          <p class="market">I am on the 2026–2027 economics job market.</p>
+          <div class="contact-lines">
+            <div><span>Email</span> <a href="mailto:vdanna@redphd.it">vdanna@redphd.it</a></div>
+            <div><span>CV</span> <a href="#">Download (PDF)</a></div>
+            <div><span>Scholar</span> <a href="https://scholar.google.com/citations?user=4ZFCPzsAAAAJ&amp;hl=it">Valentina D'Anna</a></div>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="foto.jpg" alt="Valentina D'Anna">
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+
+    <div class="divider">
+      <h2>Research</h2>
+    </div>
+
+    <div class="sec" id="job-market-paper">
+      <p class="eyebrow">Job market paper</p>
+      <div class="sec-body">
+        <article class="record nofig">
+          <div>
+            <h3>Gender Hiring Quotas</h3>
+            <p class="status">Draft available soon</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="sec" id="publications">
+      <p class="eyebrow">Publications</p>
+      <div class="sec-body">
+        <article class="record">
+          <div>
+            <h3><a href="https://www.sciencedirect.com/science/article/abs/pii/S2214804324000995">Psychosocial stress, hormones, and impulsivity/risk-taking in economic decision-making</a></h3>
+            <p class="coauthors">with <a href="https://humdev.uchicago.edu/directory/johnmichael-jurgensen">JohnMichael Jurgensen</a>, Nora Nickels McLean, Javier I. Borráz-León, <a href="https://scholar.google.com/citations?user=N1b97i8AAAAJ&amp;hl=it">Luigi Guiso</a>, <a href="https://sites.google.com/view/aldorustichini/home">Aldo Rustichini</a>, and <a href="https://humdev.uchicago.edu/directory/Dario-Maestripieri">Dario Maestripieri</a></p>
+            <p class="venue"><strong>Journal of Behavioral and Experimental Economics</strong>, Vol. 112, 2024</p>
+            <details class="abs"><summary>Abstract</summary>
+              <p>This study explored the relationships between acute psychosocial stress, hormones, probability and delay discounting, and time perspective in men and women. Study participants were 120 (60 male, 60 female) young adults. Half of them underwent the Trier Social Stress Test (TSST) and half served as controls. Saliva samples were collected from all participants and concentrations of testosterone and cortisol were measured. Risk taking and impulsivity were assessed with a probability discounting and a delay discounting task, respectively. Participants filled out several questionnaires, including the Zimbardo Time Perspective Inventory (ZTPI). The TSST was associated with an increase in salivary cortisol concentrations in males and females, and with an increase in testosterone in males, but not in females. Variation in probability discounting was predicted by changes in testosterone (the higher the testosterone the greater the risk-taking) and by the ZTPI, whereas variation in delay discounting scores was not predicted by hormones, the ZTPI, or other variables. Our study contributes to research on psychosocial stress, hormones, and decision-making by reporting, for the first time, an association between stress-induced changes in testosterone and economic risk-taking. Our study also suggests that risk-taking and impulsivity are different processes associated with different psychological and physiological mechanisms.</p>
+            </details>
+            <div class="links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S2214804324000995">Paper</a><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=it&amp;user=4ZFCPzsAAAAJ&amp;citation_for_view=4ZFCPzsAAAAJ:u5HHmVD_uO8C">Google Scholar</a></div>
+          </div>
+          <figure class="figure">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S2214804324000995"><img src="fig4.jpg" alt="Probability discounting plotted against testosterone changes"></a>
+          </figure>
+        </article>
+      </div>
+    </div>
+
+    <div class="sec" id="working-papers">
+      <p class="eyebrow">Working papers</p>
+      <div class="sec-body">
+        <article class="record">
+          <div>
+            <h3>The Early Math Gender Gap</h3>
+            <p class="coauthors">Single-authored</p>
+            <p class="status">Draft available upon request</p>
+            <details class="abs"><summary>Abstract</summary>
+              <p>The gender gap in mathematics (MGG) — defined as the difference between boys' and girls' standardized test scores — has profound implications for educational trajectories and labour-market outcomes. Leveraging rich administrative data from Rome's public preschool allocation system linked to nationally standardized test scores (INVALSI), we want to document the timing of the MGG's emergence and evaluate the role of early-childhood education in shaping this gap. We show that 70% of the MGG observed at the end of high-school is already present by grade 2. Exploiting quasi-random variation in preschool assignment, we want to estimate intention-to-treat effects that highlight heterogeneous impacts of preschool quality across gender. The aim of this study is to underscore the importance of interventions before compulsory schooling to mitigate gender disparities in mathematical ability.</p>
+            </details>
+          </div>
+          <figure class="figure">
+            <img src="fig_mgg3.jpg" alt="Evolution of math ability by gender over age">
+          </figure>
+        </article>
+      </div>
+    </div>
+
+    <div class="sec" id="work-in-progress">
+      <p class="eyebrow">Work in progress</p>
+      <div class="sec-body">
+        <div class="stack">
+          <div class="item">
+            <div>
+              <h3>Digital Transformation in Healthcare: Public Procurement, Workforce Dynamics, and Hospital Performance</h3>
+              <p>with Mattia Albanese and <a href="https://www.marcocastelluccio.com/">Marco Castelluccio</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+
+    <div class="divider">
+      <h2>CV</h2>
+    </div>
+
+    <div class="sec">
+      <p class="eyebrow"></p>
+      <div class="sec-body">
+        <p class="note">Sezione da costruire — in attesa del CV.</p>
+        <p class="cv-call"><a href="#">Full CV (PDF)</a></p>
+
+        <div class="refs">
+          <p class="eyebrow">References</p>
+          <ul>
+            <li><a href="https://www.matteoparadisi.com/">Matteo Paradisi</a><span>Einaudi Institute for Economics and Finance (EIEF)</span></li>
+            <li><a href="https://www.barbarabiasi.com/">Barbara Biasi</a><span>Yale School of Management</span></li>
+            <li><a href="https://sites.google.com/site/stefanogagliarducci/">Stefano Gagliarducci</a><span>Einaudi Institute for Economics and Finance (EIEF)</span><span>University of Rome Tor Vergata</span></li>
+            <li><a href="https://www.eief.it/eief/index.php/people/faculty-az?id=172">Luigi Guiso</a><span>Einaudi Institute for Economics and Finance (EIEF - AXA Chair)</span></li>
+          </ul>
+          <p class="refs-note">Contact details are listed in the CV.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contacts">
+
+    <div class="divider">
+      <h2>Contacts</h2>
+    </div>
+
+    <div class="sec">
+      <p class="eyebrow"></p>
+      <div class="sec-body">
+        <p class="emails">
+          <span class="lbl">email:</span>vdanna (at) redphd (dot) it<br>
+          <span class="lbl"></span>valentina.danna96 (at) gmail (dot) com<br>
+          <span class="lbl"></span>vdanna (at) luiss (dot) it
+        </p>
+        <p class="address">
+          <a href="https://www.eief.it/eief/">Einaudi Institute for Economics and Finance</a><br>
+          Via Sallustiana 62<br>
+          00187 Rome, Italy
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+</main>
+
+<footer><span>RED · Rome Economics Doctorate</span><span>© 2026 Valentina D'Anna</span></footer>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('#nav > a, #nav > .navitem > a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var i = sections.indexOf(e.target);
+      links.forEach(function(a,j){ a.classList.toggle('on', j===i); });
+    });
+  }, {rootMargin:'-30% 0px -60% 0px'});
+  sections.forEach(function(s){ if(s) io.observe(s); });
+})();
+</script>
+</body>
+</html>
