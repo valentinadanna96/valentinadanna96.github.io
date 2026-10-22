@@ -1,0 +1,266 @@
+%----------------------------------------------------------------------
+% Valentina D'Anna — Academic CV (economics job market format)
+% Compile with pdfLaTeX
+%----------------------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% --- font: uncomment ONE of the alternatives to change typeface ---------
+\usepackage{charter}          % Charter (default)
+% \usepackage{lmodern}        % Latin Modern
+% \usepackage{newtxtext}      % Times
+% \usepackage{libertine}      % Linux Libertine
+\usepackage[top=2.1cm,bottom=2.1cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,28,86}
+\usepackage[colorlinks=true,allcolors=linkblue]{hyperref}
+% underline every hyperlink so it reads as clickable
+\let\originalhref\href
+\renewcommand{\href}[2]{\originalhref{#1}{\underline{\smash{#2}}}}
+
+% --- header / footer ---------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Last updated: \today}
+\fancyfoot[R]{\footnotesize\thepage}
+
+% --- section styling ---------------------------------------------------
+\titleformat{\section}{\normalfont\large\bfseries}{}{0em}{}[\vspace{-7pt}\rule{\textwidth}{0.4pt}]
+\titlespacing{\section}{0pt}{13pt}{6pt}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{8pt}{2pt}
+
+% --- two-column (date | content) list ----------------------------------
+\newenvironment{cvlist}[1][3.0cm]{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\labelwidth}{\dimexpr#1-0.4cm\relax}%
+    \setlength{\labelsep}{0.4cm}%
+    \setlength{\itemsep}{5pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\topsep}{3pt}%
+    \renewcommand{\makelabel}[1]{##1\hfil}}}
+  {\end{list}}
+\newcommand{\when}[1]{\item[#1]}
+
+% --- indented metadata line under a paper title ------------------------
+\newcommand{\meta}[1]{{\small\hspace*{1.4em}#1}}
+
+% --- placeholder marker for fields still to fill in --------------------
+\newcommand{\todo}[1]{\textcolor{red}{[#1]}}
+
+\begin{document}
+
+%-----------------------------------------------------------------------
+% HEADER
+%-----------------------------------------------------------------------
+\begin{center}
+  {\LARGE\bfseries Valentina D'Anna}
+\end{center}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}Xr@{}}
+Einaudi Institute for Economics and Finance (EIEF) & \href{mailto:vdanna@redphd.it}{vdanna@redphd.it} \\
+Via Sallustiana, 62 & \href{https://www.valentinadanna.com}{www.valentinadanna.com} \\
+Rome (RM), Italy, 00187 & \\
+\end{tabularx}
+
+\vspace{6pt}
+\noindent\textbf{Research fields:} Labor Economics, Economics of Education,
+Economics of Gender.
+
+%-----------------------------------------------------------------------
+\section{Education}
+\begin{cvlist}
+  \when{2022 -- present}
+    \textbf{PhD in Economics, Rome Economics Doctorate (RED)}\\
+    Supervisors: Matteo Paradisi (EIEF) and Barbara Biasi (Yale School of Management)
+
+  \when{2020 -- 2022}
+    \textbf{MSc in Economics} (\textit{summa cum laude})\\
+    University of Rome Tor Vergata
+
+  \when{2017 -- 2020}
+    \textbf{BA in Business Administration} (\textit{summa cum laude})\\
+    Tuscia University
+\end{cvlist}
+
+%-----------------------------------------------------------------------
+\section{Research}
+
+\subsection*{Job Market Paper}
+\noindent
+``Gender Hiring Quotas''\\
+\meta{with E.\ Sena}\\
+\meta{Draft available soon}
+
+\subsection*{Publications}
+\noindent
+``Psychosocial Stress, Hormones, and Impulsivity/Risk-Taking in Economic
+Decision-Making'' \href{https://www.sciencedirect.com/science/article/abs/pii/S2214804324000995}{[Paper]}\\
+\meta{with J.M.\ Jurgensen, N.N.\ McLean, J.I.\ Borr\'az-Le\'on, L.\ Guiso,
+A.\ Rustichini and D.\ Maestripieri}\\
+\meta{\textit{Journal of Behavioral and Experimental Economics}, 112 (2024): 102262}
+
+\subsection*{Working Papers}
+\noindent
+``The Early Math Gender Gap''\\
+\meta{single-authored}\\
+\meta{Draft available upon request}
+
+\subsection*{Selected Work in Progress}
+\noindent
+``Digital Transformation in Healthcare: Public Procurement, Workforce Dynamics,
+and Hospital Performance'' \\
+\meta{with M.\ Albanese and \href{https://www.marcocastelluccio.com/}{M.\ Castelluccio}}
+
+%-----------------------------------------------------------------------
+\section{Scholarships and Awards}
+\begin{cvlist}
+  \when{2025}
+    \textbf{VisitPNRR Scholar} --- Principal Investigator\\
+    INPS (Italian Social Security Institute)
+
+  \when{2023 -- 2025}
+    \textbf{VisitINPS Scholar} --- Gender Program, collaborator\\
+    INPS (Italian Social Security Institute)
+
+  \when{2022}
+    \textbf{Best First-Year Student Prize}, MSc in Economics\\
+    University of Rome Tor Vergata
+
+  \when{2021}
+    \textbf{Best Student Prize}, MSc in Economics --- SOSE scholarship\\
+    University of Rome Tor Vergata
+\end{cvlist}
+
+%-----------------------------------------------------------------------
+\section{Seminar and Conference Presentations}
+\begin{cvlist}
+  \when{2026} 5th Rome PhD Conference in Economics \& Finance (scheduled);
+              Economics Job Market Bootcamp (Pitigliano)
+  \when{2025} 4th Rome PhD Conference in Economics \& Finance
+              (University of Rome Tor Vergata)
+  \when{2024} 3rd Rome PhD Conference in Economics \& Finance (LUISS University)
+  \when{2023} 2nd Rome PhD Conference in Economics \& Finance
+              (University of Rome Tor Vergata)
+\end{cvlist}
+
+%-----------------------------------------------------------------------
+\section{Teaching Experience}
+\begin{cvlist}
+  \when{2027 (spring)}
+    \textbf{Teaching Assistant}, Policy Evaluation (master) --- scheduled\\
+    MSc in Economics, LUISS University\\
+    {\small Matteo Ruzzante, Giulia Tura}
+
+  \when{2027 (spring)}
+    \textbf{Teaching Assistant}, Microeconomics (undergraduate) --- scheduled\\
+    Economics and Business, LUISS University\\
+    {\small Matteo Escud\`e, Giulia Tura}
+
+  \when{2026 (spring)}
+    \textbf{Teaching Assistant}, Microeconomics (undergraduate)\\
+    Economics and Business, LUISS University\\
+    {\small Matteo Escud\`e, Giulia Tura}
+
+  \when{2025 (fall)}
+    \textbf{Teaching Assistant}, Industry Dynamics (master)\\
+    MSc in Strategic Management, LUISS University\\
+    {\small Francesca Lotti, Edoardo Di Porto}
+
+  \when{2025 (fall)}
+    \textbf{Teaching Assistant}, Microeconomics (undergraduate)\\
+    Business Administration, LUISS University\\
+    {\small Emilio Calvano}
+
+  \when{2025 (spring)}
+    \textbf{Teaching Assistant}, Macroeconomics (undergraduate)\\
+    Business Administration, LUISS University\\
+    {\small Diletta Topazio}
+
+  \when{2025 (spring)}
+    \textbf{Teaching Assistant}, Microeconomics (undergraduate)\\
+    Economics and Business, LUISS University\\
+    {\small Matteo Escud\`e, Giulia Tura}
+
+  \when{2021}
+    \textbf{Tutor}, Mathematics (undergraduate)\\
+    University of Rome Tor Vergata
+\end{cvlist}
+
+%-----------------------------------------------------------------------
+\section{Research Experience}
+\begin{cvlist}
+  \when{2025 -- 2026}
+    \textbf{Research Assistant} for Giulia Tura (LUISS University)
+
+  \when{2025}
+    \textbf{Research Assistant} for Barbara Biasi (Yale School of Management)
+
+  \when{2023 -- 2025}
+    \textbf{Research Assistant} for Barbara Biasi (Yale School of Management),
+    Nicola Bianchi (Kellogg School of Management), Hyejin Ku (UCL) and
+    Matteo Paradisi (EIEF)\\
+    {\small VisitINPS Scholars Gender Program}
+
+  \when{2023}
+    \textbf{Research Assistant} for Paola Giuliano (UCLA)
+
+  \when{2022}
+    \textbf{Research Assistant} for Federico Belotti
+    (University of Rome Tor Vergata)
+
+  \when{2021 -- 2022}
+    \textbf{Research Assistant} for Stefano Gagliarducci
+    (EIEF, University of Rome Tor Vergata)
+\end{cvlist}
+
+%-----------------------------------------------------------------------
+\section{Professional Activity}
+\noindent
+\textbf{Refereeing:} \textit{Journal of Behavioral and Experimental Economics}
+
+%-----------------------------------------------------------------------
+\section{Other / Personal}
+\noindent
+\textbf{Languages:} Italian (native), English (fluent), Spanish (fluent)\\
+\textbf{Citizenship:} Italian\\
+\textbf{Other:} Former professional dancer; stand-up comedian
+
+%-----------------------------------------------------------------------
+\section{References}
+\vspace{4pt}
+\noindent\small
+\begin{tabular*}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.47\textwidth}@{\hspace{0.03\textwidth}}>{\raggedright\arraybackslash}p{0.47\textwidth}@{}}
+\href{https://www.matteoparadisi.com/}{\textbf{Matteo Paradisi}} & \href{https://www.barbarabiasi.com/}{\textbf{Barbara Biasi}} \\
+EIEF & Yale School of Management \\
+Rome, Italy & New Haven, CT 06511, USA \\
+Phone: +39 06 4792 98012 & Phone: +1 (203) 432-7868 \\
+Email: \href{mailto:matteo.paradisi@eief.it}{matteo.paradisi@eief.it} & Email: \href{mailto:barbara.biasi@yale.edu}{barbara.biasi@yale.edu} \\
+\end{tabular*}
+
+\vspace{8pt}
+\noindent\small
+\begin{tabular*}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.47\textwidth}@{\hspace{0.03\textwidth}}>{\raggedright\arraybackslash}p{0.47\textwidth}@{}}
+\href{https://sites.google.com/site/stefanogagliarducci/}{\textbf{Stefano Gagliarducci}} & \href{https://www.eief.it/eief/index.php/people/faculty-az?id=172}{\textbf{Luigi Guiso}} \\
+University of Rome Tor Vergata, EIEF & EIEF \\
+Rome, Italy & Rome, Italy \\
+Phone: +39 06 4792 98914 & Phone: +39 06 4792 4858 \\
+Email: \href{mailto:stefano.gagliarducci@eief.it}{stefano.gagliarducci@eief.it} & Email: \href{mailto:luigi.guiso55@gmail.com}{luigi.guiso55@gmail.com} \\
+\end{tabular*}
+
+\vspace{6pt}
+\noindent
+\textbf{Placement Director:} \href{https://sites.google.com/view/joao-cmonteiro/}{Joao Monteiro}, EIEF, +39 06 4792 4968, \href{mailto:joao.monteiro@eief.it}{joao.monteiro@eief.it}\\
+\textbf{Program Administrator:} Andrada Matei, EIEF, +39 06 4792 4841, \href{mailto:andrada.matei@eief.it}{andrada.matei@eief.it}
+
+\end{document}
